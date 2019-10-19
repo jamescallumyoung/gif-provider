@@ -1,0 +1,42 @@
+{
+  "name": "@jych/gif-provider",
+  "version": "0.1.0",
+  "description": "JavaScript module for querying various gif APIs.",
+  "main": "dist/index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist docs && mkdir -p dist docs",
+    "generate-docs": "typedoc --out docs --theme minimal",
+    "test": "mocha tests/",
+    "transpile": "tsc",
+    "transpile-with-maps": "npm run transpile -- --declaration --declarationMap"
+  },
+  "keywords": [
+    "GIF",
+    "Giphy",
+    "gifbar"
+  ],
+  "author": {
+    "name": "James Young",
+    "email": "hello@jamesyoung.ch",
+    "url": "jamesyoung.ch"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/bluebird": "^3.5.28",
+    "@types/lodash": "^4.14.144",
+    "@types/node": "^12.11.1",
+    "typedoc": "^0.15.0",
+    "typescript": "^3.6.4"
+  },
+  "dependencies": {
+    "bluebird": "^3.7.1",
+    "giphy-api": "^2.0.1",
+    "lodash": "^4.17.15"
+  }
+}
