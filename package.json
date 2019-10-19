@@ -13,8 +13,7 @@
     "clean": "rm -rf dist docs && mkdir -p dist docs",
     "generate-docs": "typedoc --out docs --theme minimal",
     "test": "mocha tests/",
-    "transpile": "tsc",
-    "transpile-with-maps": "npm run transpile -- --declaration --declarationMap"
+    "transpile": "tsc"
   },
   "keywords": [
     "GIF",

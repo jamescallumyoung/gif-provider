@@ -7,9 +7,9 @@
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    "sourceMap": false,
-    "declaration": false,
-    "declarationMap": false,
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
     "outDir": "dist"
   },
   "include": [
