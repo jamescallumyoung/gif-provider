@@ -2,3 +2,4 @@
 
 export {CompositeGifProvider} from './CompositeGifProvider'
 export {GiphyGifProvider} from './GiphyGifProvider';
+export {TenorGifProvider} from './TenorGifProvider'

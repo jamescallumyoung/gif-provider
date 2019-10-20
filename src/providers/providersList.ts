@@ -9,8 +9,10 @@ interface ProviderRecord {
 
 // 1. import the provider
 import {GiphyGifProvider} from './GiphyGifProvider';
+import {TenorGifProvider} from './TenorGifProvider'
 
 // 2. add an instance to the export
 export const providersList: ProviderRecord[] = [
-    { name: "giphy", class: new GiphyGifProvider() }
+    { name: "giphy", class: new GiphyGifProvider() },
+    { name: "tenor", class: new TenorGifProvider() }
 ];
