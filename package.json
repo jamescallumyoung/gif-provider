@@ -1,7 +1,7 @@
 {
   "name": "@jych/gif-provider",
   "description": "JavaScript module for querying various gif APIs.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": false,
   "readme": "README.md",
   "main": "dist/index.js",
@@ -17,6 +17,7 @@
     "test": "mocha",
     "transpile": "tsc",
     "publish-please": "publish-please",
+    "prepublish-please": "npm run clean && npm run test && npm run transpile",
     "prepublishOnly": "publish-please guard"
   },
   "keywords": [
