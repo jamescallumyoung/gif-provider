@@ -7,4 +7,4 @@ export * from './providers';
 export {providersList} from './providers/providersList'
 
 // The factory
-export {} from './GifProviderFactory'
+export {GifProviderFactory} from './GifProviderFactory'
