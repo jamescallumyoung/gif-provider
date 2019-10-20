@@ -1,4 +1,4 @@
-import * as Bluebird from 'bluebird';
+import Bluebird from 'bluebird';
 import {flatten} from 'lodash'
 
 import {GifProvider} from "../GifProvider";
