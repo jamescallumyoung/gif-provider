@@ -14,7 +14,9 @@
     "clean": "rm -rf dist docs && mkdir -p dist docs",
     "generate-docs": "typedoc --out docs --theme minimal",
     "test": "mocha",
-    "transpile": "tsc"
+    "transpile": "tsc",
+    "publish-please": "publish-please",
+    "prepublishOnly": "publish-please guard"
   },
   "keywords": [
     "GIF",
@@ -50,7 +52,8 @@
   "dependencies": {
     "bluebird": "^3.7.1",
     "giphy-api": "^2.0.1",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "publish-please": "^5.5.1"
   },
   "mocha": {
     "require": [
