@@ -2,6 +2,7 @@
   "name": "@jych/gif-provider",
   "version": "0.1.0",
   "description": "JavaScript module for querying various gif APIs.",
+  "readme": "README.md",
   "main": "dist/index.js",
   "directories": {
     "test": "tests"
@@ -26,6 +27,11 @@
     "url": "jamesyoung.ch"
   },
   "license": "ISC",
+  "repository": {
+    "url": "https://gitlab.com/jych/gif-provider",
+    "type": "git"
+  },
+  "homepage": "https://gitlab.com/jych/gif-provider",
   "devDependencies": {
     "@types/bluebird": "^3.5.28",
     "@types/chai": "^4.2.3",
