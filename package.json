@@ -1,7 +1,7 @@
 {
   "name": "@jych/gif-provider",
   "description": "JavaScript module for querying various gif APIs.",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "private": false,
   "readme": "README.md",
   "main": "dist/index.js",
@@ -46,6 +46,7 @@
     "chai": "^4.2.0",
     "mocha": "^6.2.2",
     "nock": "^11.4.0",
+    "publish-please": "^5.5.1",
     "sinon": "^7.5.0",
     "ts-node": "^8.4.1",
     "typedoc": "^0.15.0",
@@ -54,8 +55,7 @@
   "dependencies": {
     "bluebird": "^3.7.1",
     "giphy-api": "^2.0.1",
-    "lodash": "^4.17.15",
-    "publish-please": "^5.5.1"
+    "lodash": "^4.17.15"
   },
   "mocha": {
     "require": [
