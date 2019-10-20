@@ -1,0 +1,18 @@
+default:
+  image: node:lts
+
+pages:
+  script:
+    - rm -rf public
+    - rm -rf node_modules
+    - npm run clean
+    - npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
+    - npm ci
+    - yes Y | npx publish-please
+    - npm run generate-docs
+    - mv docs public
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
