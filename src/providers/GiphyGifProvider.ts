@@ -19,7 +19,10 @@ export class GiphyGifProvider implements GifProvider {
         this.api = giphyApi(apiKey);
     }
 
-    _convertResponseToGifs(res: GiphyApiResponse): Gif[] {
+    private _convertResponseToGifs(res: GiphyApiResponse): Gif[] {
+
+        if(!res || !res.data) return [];
+
         // @ts-ignore
         return res.data.map( (gif: any) : Gif => {
             try {
