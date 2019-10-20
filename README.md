@@ -1,5 +1,8 @@
 # gif-provider
 
+[![pipeline status](https://gitlab.com/jych/gif-provider/badges/master/pipeline.svg)](https://gitlab.com/jych/gif-provider/commits/master)
+[![coverage report](https://gitlab.com/jych/gif-provider/badges/master/coverage.svg)](https://gitlab.com/jych/gif-provider/commits/master)
+
 gif-provider is a JavaScript module that allows you to querying various gif APIs. Queries can
 be done to a single API at a time, or to multiple, with the results aggregated.
 

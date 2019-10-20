@@ -1,0 +1,15 @@
+default:
+  image: node:lts
+
+pages:
+  script:
+    - rm -rf public
+    - npm run clean
+    - npm ci
+    - npm run generate-docs
+    - mv docs public
+  artifacts:
+    paths:
+      - public
+  only:
+    - tags
