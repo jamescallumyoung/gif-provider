@@ -23,8 +23,6 @@ describe('CompositeGifProvider', function () {
 
         it('should call the trending method on each of it\'s wrapped GifProviders (once each)', async function () {
 
-            // create a sinon sandbox
-
             // given
             const giphyGifProvider = new GiphyGifProvider();
             const giphyTrendingStub = sandbox.stub(giphyGifProvider, 'trending')
@@ -50,8 +48,6 @@ describe('CompositeGifProvider', function () {
         });
 
         it('should aggregate the results of each wrapped GifProvider', async function () {
-
-            // create a sinon sandbox
 
             // given
             const giphyResponse: Gif[] = [
@@ -99,8 +95,6 @@ describe('CompositeGifProvider', function () {
         });
 
         it('still aggregates the results if some of the wrapped GifProviders return an empty array', async function () {
-
-            // create a sinon sandbox
 
             // given
             const giphyResponse: Gif[] = [
@@ -155,7 +149,56 @@ describe('CompositeGifProvider', function () {
             // then
             expect(r).to.be.an("Array");
             expect(r).to.have.lengthOf(0);
-        })
+        });
+
+        it('returns the first N results if the wrapped GifProviders provide more than \'limit\' results', async function () {
+
+            // given
+            const giphyResponse: Gif[] = [
+                new Gif("goo", "bar"),
+                new Gif("goo", "bar"),
+                new Gif("goo", "bar"),
+                new Gif("goo", "bar"),
+                new Gif("goo", "bar"),
+                new Gif("goo", "bar"),
+                new Gif("goo", "bar")
+            ];
+
+            const otherResponse: Gif[] = [
+                new Gif("ooo", "bar"),
+                new Gif("ooo", "bar"),
+                new Gif("ooo", "bar"),
+                new Gif("ooo", "bar"),
+                new Gif("ooo", "bar"),
+                new Gif("ooo", "bar"),
+                new Gif("ooo", "bar")
+            ];
+
+            const giphyGifProvider = new GiphyGifProvider();
+            const otherGifProvider = new GiphyGifProvider();
+
+            sandbox.stub(giphyGifProvider, 'trending')
+                .callsFake( async (limit?: number) => {
+                    return giphyResponse;
+                } );
+
+            sandbox.stub(otherGifProvider, 'trending')
+                .callsFake( async (limit?: number) => {
+                    return otherResponse;
+                } );
+
+            const compositeGifProvider = new CompositeGifProvider([ giphyGifProvider, otherGifProvider ]);
+
+            const limit = 5;
+
+            // when
+            const r = await compositeGifProvider.trending(limit);
+
+            // then
+            expect(r).to.be.an("Array");
+            expect(r).to.have.lengthOf(5);
+            expect(r).to.deep.include.members([ ...giphyResponse .slice(0, limit)]);
+        });
     });
 
     describe('search', function () {
@@ -288,6 +331,55 @@ describe('CompositeGifProvider', function () {
             // then
             expect(r).to.be.an("Array");
             expect(r).to.have.lengthOf(0);
+        });
+
+        it('returns the first N results if the wrapped GifProviders provide more than \'limit\' results', async function () {
+
+            // given
+            const giphyResponse: Gif[] = [
+                new Gif("goo", "bar"),
+                new Gif("goo", "bar"),
+                new Gif("goo", "bar"),
+                new Gif("goo", "bar"),
+                new Gif("goo", "bar"),
+                new Gif("goo", "bar"),
+                new Gif("goo", "bar")
+            ];
+
+            const otherResponse: Gif[] = [
+                new Gif("ooo", "bar"),
+                new Gif("ooo", "bar"),
+                new Gif("ooo", "bar"),
+                new Gif("ooo", "bar"),
+                new Gif("ooo", "bar"),
+                new Gif("ooo", "bar"),
+                new Gif("ooo", "bar")
+            ];
+
+            const giphyGifProvider = new GiphyGifProvider();
+            const otherGifProvider = new GiphyGifProvider();
+
+            sandbox.stub(giphyGifProvider, 'search')
+                .callsFake( async (query: string, limit?: number) => {
+                    return giphyResponse;
+                } );
+
+            sandbox.stub(otherGifProvider, 'search')
+                .callsFake( async (query: string, limit?: number) => {
+                    return otherResponse;
+                } );
+
+            const compositeGifProvider = new CompositeGifProvider([ giphyGifProvider, otherGifProvider ]);
+
+            const limit = 5;
+
+            // when
+            const r = await compositeGifProvider.search("superman", limit);
+
+            // then
+            expect(r).to.be.an("Array");
+            expect(r).to.have.lengthOf(5);
+            expect(r).to.deep.include.members([ ...giphyResponse .slice(0, limit)]);
         });
     });
 });

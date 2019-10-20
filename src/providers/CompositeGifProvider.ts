@@ -27,7 +27,8 @@ export class CompositeGifProvider implements GifProvider {
      */
     async trending(limit: number = 30) : Promise<Gif[]> {
         return Bluebird.map(this.providers, (provider) => provider.trending(limit) )
-            .then( results  => flatten(results) );
+            .then( results  => flatten(results) )
+            .then( results => results.slice(0, limit) );
     }
 
     /**
@@ -42,6 +43,7 @@ export class CompositeGifProvider implements GifProvider {
      */
     async search(query: string, limit: number = 30) {
         return Bluebird.map(this.providers, (provider) => provider.search(query, limit) )
-            .then( (results) => flatten(results) );
+            .then( results => flatten(results) )
+            .then( results => results.slice(0, limit) );
     }
 }
