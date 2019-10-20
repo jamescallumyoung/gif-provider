@@ -1,7 +1,8 @@
 {
   "name": "@jych/gif-provider",
-  "version": "0.1.0",
   "description": "JavaScript module for querying various gif APIs.",
+  "version": "0.2.0",
+  "private": false,
   "readme": "README.md",
   "main": "dist/index.js",
   "directories": {
