@@ -33,15 +33,34 @@ You can easily extend gif-provider to support other APIs, either by contributing
  
  ### Example Usage
  
+ Querying Giphy:
+ 
  ```JavaScript
  const {GiphyGifProvider} = require('@jych/gif-provider');
  
- const giphyGifProvider = new GiphyGifProvider();
+ const gifProvider = new GiphyGifProvider();
  
- giphyGifProvider.search("rat mouse")
+ gifProvider.search("rat mouse")
     .then( gifs => {
         // ...
     } );
+ ```
+ 
+ Querying multiple sites:
+ 
+ ```javascript
+ const {CompositeGifProvider, GifProviderFactory} = require('@jych/gif-provider');
+ 
+ const gifProvider =
+    new CompositeGifProvider(GifProviderFactory.getProviders([ "giphy", "other", "foobar" ]));
+ 
+ gifProvider.search("rat mouse")
+     .then( gifs => {
+         
+         // gifs is a flat array of results from each site
+         
+         // ...
+     } );
  ```
  
  ## Docs
