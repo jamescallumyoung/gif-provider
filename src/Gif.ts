@@ -5,11 +5,19 @@
  */
 export class Gif {
 
-    private readonly originalUrl: string;
-    private readonly thumbnailUrl: string;
+    private readonly _originalUrl: string;
+    private readonly _thumbnailUrl: string;
 
     constructor(originalUrl: string, thumbnailUrl: string) {
-        this.originalUrl = originalUrl;
-        this.thumbnailUrl = thumbnailUrl;
+        this._originalUrl = originalUrl;
+        this._thumbnailUrl = thumbnailUrl;
+    }
+
+    get originalUrl() {
+        return this._originalUrl;
+    }
+
+    get thumbnailUrl() {
+        return this._thumbnailUrl;
     }
 }
