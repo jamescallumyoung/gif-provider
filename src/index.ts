@@ -3,7 +3,7 @@ export {Gif} from './Gif'
 
 // The providers
 export {GifProvider} from './GifProvider'
-export * from './providers';
+export {CompositeGifProvider, GiphyGifProvider} from './providers';
 export {providersList} from './providers/providersList'
 
 // The factory
