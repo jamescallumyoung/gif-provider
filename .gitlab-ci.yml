@@ -3,13 +3,11 @@ default:
 
 pages:
   script:
-    - rm -rf public
-    - npm run clean
-    - npm ci
-    - npm run generate-docs
-    - mv docs public
+    - mkdir .public
+    - cp -r docs .public
+    - mv .public public
   artifacts:
     paths:
       - public
   only:
-    - tags
+    - master

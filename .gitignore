@@ -1,4 +1,4 @@
 .idea/
 dist/
-docs/
+# docs/
 node_modules/
