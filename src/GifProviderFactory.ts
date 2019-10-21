@@ -4,8 +4,9 @@ import {GifProvider} from "./GifProvider";
 export class GifProviderFactory {
 
     /**
-     * Takes an array of source names and returns an array of providers which match.
-     * @param sources - The names of the [[GifProvider]]s to find
+     * Search for [[GifProvider|GifProviders]].
+     *
+     * @param sources - The names of the [[GifProvider|GifProviders]] to find
      */
     static getProviders(sources: string[] = []) : GifProvider[] {
         return providersList

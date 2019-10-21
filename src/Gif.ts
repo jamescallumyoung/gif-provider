@@ -1,5 +1,6 @@
 /**
- * A DataObject that represents a Gif
+ * A DataObject that represents a Gif.
+ *
  * @property originalUrl {String} - The URL of the full size GIF
  * @property thumbnailUrl {String} - The URL of the thumbnail GIF
  */

@@ -35,9 +35,9 @@ export class TenorGifProvider implements GifProvider {
 
     /**
      * List the trending gifs from the Tenor API.
-     * Returns an empty list if there's an error in the request.
      *
      * @param limit - The maximum number of results to return
+     * @returns an empty list if there's an error in the request.
      */
     async trending(limit: number = 30): Promise<Gif[]> {
         return rp({
@@ -56,10 +56,10 @@ export class TenorGifProvider implements GifProvider {
 
     /**
      * Search for gifs from the Tenor API
-     * Returns an empty list if there are no matching results or an error in the request
      *
      * @param query - The query string
      * @param limit - The maximum number of results to return
+     * @returns an empty list if there are no matching results or an error in the request
      */
     async search(query: string, limit: number = 30): Promise<Gif[]> {
         return rp({

@@ -1,13 +1,10 @@
 # gif-provider
 
-[![pipeline status](https://gitlab.com/jych/gif-provider/badges/master/pipeline.svg)](https://gitlab.com/jych/gif-provider/commits/master)
-[![coverage report](https://gitlab.com/jych/gif-provider/badges/master/coverage.svg)](https://gitlab.com/jych/gif-provider/commits/master)
-
-gif-provider is a JavaScript module that allows you to querying various gif APIs. Queries can
+_gif-provider_ is a JavaScript module that allows you to querying various gif APIs. Queries can
 be done to a single API at a time, or to multiple, with the results aggregated.
 
-The module currently supports fetching gifs from [Giphy](https://developers.giphy.com/docs/api/).
-Support for [Tenor](https://tenor.com/gifapi) is in progress.
+The module currently supports fetching gifs from [Giphy](https://developers.giphy.com/docs/api/)
+and [Tenor](https://tenor.com/gifapi). Other APIs may be added in the future.
 
 You can easily extend gif-provider to support other APIs, either by contributing on 
 [GitLab](https://gitlab.com/jych/gif-provider), or by implementing your own GifProvider class.
@@ -25,13 +22,13 @@ npm install --save @jych/gif-provider
 In Node and CommonJS build systems:
 
 ```JavaScript
-const {GifProviderFactory} = require('@jych/gif-provider');
+const {GiphyGifProvider} = require('@jych/gif-provider');
 ```
 
 In ES6 Modules and Typescript:
 
 ```JavaScript
-import {GifProviderFactory} from 'jych/gif-provider';
+import {GiphyGifProvider} from 'jych/gif-provider';
 ```
 
 ### Example Usage
@@ -54,27 +51,25 @@ Querying multiple sites:
 ```javascript
 const {CompositeGifProvider, GifProviderFactory} = require('@jych/gif-provider');
 
-const gifProvider =
-new CompositeGifProvider(GifProviderFactory.getProviders([ "giphy", "other", "foobar" ]));
+const providers = GifProviderFactory.getProviders([ "giphy", "tenor", "some-other-site" ];
+const gifProvider = new CompositeGifProvider(providers);
 
 gifProvider.search("rat mouse")
  .then( gifs => {
      
      // gifs is a flat array of results from each site
-     
      // ...
  } );
 ```
 
 ## Docs
 
-Full docs can be generated for offline use with:
+A full copy of these docs can be generated for offline using TypeDoc:
 
 ```bash
-npm i @jych/gif-provider
+npm install @jych/gif-provider
 cd node_modules/@jych/gif-provider
-npm i
+npm install
 npm run generate-docs
-cd docs
-open index.html 
+open doc/index.html
 ```
