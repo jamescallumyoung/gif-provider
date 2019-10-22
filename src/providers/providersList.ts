@@ -2,6 +2,7 @@
 
 import {GifProvider} from "../GifProvider";
 
+/** @ignore */
 interface ProviderRecord {
     name: string,
     class: GifProvider
@@ -12,9 +13,7 @@ import {GiphyGifProvider} from './GiphyGifProvider';
 import {TenorGifProvider} from './TenorGifProvider'
 
 // 2. add an instance to the export
-/**
- * @ignore
- */
+/** @ignore */
 export const providersList: ProviderRecord[] = [
     { name: "giphy", class: new GiphyGifProvider() },
     { name: "tenor", class: new TenorGifProvider() }

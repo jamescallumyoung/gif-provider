@@ -64,12 +64,12 @@ gifProvider.search("rat mouse")
 
 ## Docs
 
-A full copy of these docs can be generated for offline using TypeDoc:
+A full copy of these docs can be generated for offline use:
 
 ```bash
 npm install @jych/gif-provider
 cd node_modules/@jych/gif-provider
 npm install
 npm run generate-docs
-open doc/index.html
+open docs/index.html
 ```

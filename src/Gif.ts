@@ -1,8 +1,8 @@
 /**
  * A DataObject that represents a Gif.
  *
- * @property originalUrl {String} - The URL of the full size GIF
- * @property thumbnailUrl {String} - The URL of the thumbnail GIF
+ * @property originalUrl - The URL of the full size GIF
+ * @property thumbnailUrl - The URL of the thumbnail GIF
  */
 export class Gif {
 
@@ -14,10 +14,12 @@ export class Gif {
         this._thumbnailUrl = thumbnailUrl;
     }
 
+    /** @returns The URL for the full size Gif file */
     get originalUrl() {
         return this._originalUrl;
     }
 
+    /** @returns The URL for the thumbnail size Gif file */
     get thumbnailUrl() {
         return this._thumbnailUrl;
     }

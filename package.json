@@ -13,7 +13,8 @@
   ],
   "scripts": {
     "clean": "rm -rf dist docs && mkdir -p dist docs",
-    "generate-docs": "typedoc --out docs --theme ../typedoc-canvo-theme/bin/default --mode \"file\"",
+    "generate-docs": "typedoc --out docs minimal --mode \"file\"",
+    "generate-docs-ci": "typedoc --out docs --theme ../typedoc-canvo-theme/bin/default --mode \"file\"",
     "test": "mocha",
     "transpile": "tsc",
     "publish-please": "publish-please",
