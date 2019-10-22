@@ -7,7 +7,9 @@ The module currently supports fetching gifs from [Giphy](https://developers.giph
 and [Tenor](https://tenor.com/gifapi). Other APIs may be added in the future.
 
 You can easily extend gif-provider to support other APIs, either by contributing on 
-[GitLab](https://gitlab.com/jych/gif-provider), or by implementing your own GifProvider class.
+[GitHub](https://github.com/jamescallumyoung/gif-provider), or by implementing your own GifProvider class.
+
+See the [API documenntation](https://jych.gitlab.io/gif-provider/docs/) here.
 
 ## Installation
 
@@ -64,7 +66,7 @@ gifProvider.search("rat mouse")
 
 ## Docs
 
-A full copy of these docs can be generated for offline use:
+A full copy of the docs can be generated for offline use:
 
 ```bash
 npm install @jych/gif-provider
