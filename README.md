@@ -14,7 +14,7 @@ See the [API documenntation](https://jych.gitlab.io/gif-provider/docs/) here.
 ## Installation
 
 ```bash
-npm install --save @jych/gif-provider
+yarn add --save @jych/gif-provider
 ```
 
 ## Getting Started
@@ -69,9 +69,9 @@ gifProvider.search("rat mouse")
 A full copy of the docs can be generated for offline use:
 
 ```bash
-npm install @jych/gif-provider
+yarn add @jych/gif-provider
 cd node_modules/@jych/gif-provider
-npm install
-npm run generate-docs
+yarn
+yarn run generate-docs
 open docs/index.html
 ```

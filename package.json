@@ -18,7 +18,7 @@
     "test": "mocha",
     "transpile": "tsc",
     "publish-please": "publish-please",
-    "prepublish-please": "npm run clean && npm run test && npm run transpile",
+    "prepublish-please": "yarn run clean && yarn run test && yarn run transpile",
     "prepublishOnly": "publish-please guard"
   },
   "keywords": [
