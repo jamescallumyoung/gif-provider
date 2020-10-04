@@ -1,6 +1,6 @@
 # gif-provider
 
-_gif-provider_ is a JavaScript module that allows you to querying various gif APIs. Queries can
+_gif-provider_ is a JavaScript module that allows you to query various gif APIs. Queries can
 be done to a single API at a time, or to multiple, with the results aggregated.
 
 The module currently supports fetching gifs from [Giphy](https://developers.giphy.com/docs/api/)
@@ -9,7 +9,7 @@ and [Tenor](https://tenor.com/gifapi). Other APIs may be added in the future.
 You can easily extend gif-provider to support other APIs, either by contributing on 
 [GitHub](https://github.com/jamescallumyoung/gif-provider), or by implementing your own GifProvider class.
 
-See the [API documenntation](https://jych.gitlab.io/gif-provider/docs/) here.
+See the [API documentation](https://jych.gitlab.io/gif-provider/docs/) here.
 
 ## Installation
 
@@ -58,7 +58,6 @@ const gifProvider = new CompositeGifProvider(providers);
 
 gifProvider.search("rat mouse")
  .then( gifs => {
-     
      // gifs is a flat array of results from each site
      // ...
  } );
@@ -66,7 +65,7 @@ gifProvider.search("rat mouse")
 
 ## Docs
 
-A full copy of the docs can be generated for offline use:
+See the [online docs](https://jych.gitlab.io/gif-provider/docs/) or generate a local copy for offline use:
 
 ```bash
 yarn add @jych/gif-provider
