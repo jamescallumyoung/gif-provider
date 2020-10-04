@@ -12,7 +12,8 @@
     "declarationMap": true,
     "outDir": "dist",
     "resolveJsonModule": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "strict": true
   },
   "include": [
     "src"

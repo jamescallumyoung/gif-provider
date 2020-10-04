@@ -5,11 +5,11 @@ export interface GifProvider {
     /**
      * @param limit - The maximum number of results to return
      */
-    trending: { (limit: Number): Promise<Gif[]> },
+    trending: { (limit: number): Promise<Gif[]> },
 
     /**
      * @param query - The search query
      * @param limit - The maximum number of results to return
      */
-    search: { (query: string, limit: Number) : Promise<Gif[]> }
+    search: { (query: string, limit: number) : Promise<Gif[]> }
 }
