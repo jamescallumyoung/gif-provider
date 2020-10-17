@@ -12,14 +12,9 @@
     "dist"
   ],
   "scripts": {
-    "clean": "rm -rf dist docs && mkdir -p dist docs",
-    "generate-docs": "typedoc --out docs --theme minimal --mode \"file\"",
-    "generate-docs-ci": "typedoc --out docs --theme ../typedoc-canvo-theme/bin/default --mode \"file\"",
+    "build": "tsc",
     "test": "mocha",
-    "transpile": "tsc",
-    "publish-please": "publish-please",
-    "prepublish-please": "yarn run clean && yarn run test && yarn run transpile",
-    "prepublishOnly": "publish-please guard"
+    "generate-docs": "typedoc --out docs --theme minimal --mode \"file\""
   },
   "keywords": [
     "GIF",
@@ -43,18 +38,17 @@
     "@types/lodash": "^4.14.144",
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.11.1",
+    "@types/request-promise": "^4.1.44",
     "@types/sinon": "^7.5.0",
     "chai": "^4.2.0",
     "mocha": "^6.2.2",
     "nock": "^11.4.0",
-    "publish-please": "^5.5.1",
     "sinon": "^7.5.0",
     "ts-node": "^8.4.1",
     "typedoc": "^0.15.0",
     "typescript": "^3.6.4"
   },
   "dependencies": {
-    "@types/request-promise": "^4.1.44",
     "bluebird": "^3.7.1",
     "giphy-api": "^2.0.1",
     "lodash": "^4.17.15",
