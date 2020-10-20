@@ -16,13 +16,6 @@ describe('Gif', function() {
             // when/then
             expect(gif.originalUrl).to.equal(orig);
         });
-
-        it('should be immutable', function () {
-
-            // when/then
-            // @ts-ignore
-            expect( () => gif.originalUrl = "" ).to.throw();
-        });
     });
 
     describe('thumbnailUrl', function () {
@@ -36,13 +29,6 @@ describe('Gif', function() {
 
             // when/then
             expect(gif.thumbnailUrl).to.equal(thumb);
-        });
-
-        it('should be immutable', function () {
-
-            // when/then
-            // @ts-ignore
-            expect( () => gif.thumbnailUrl = "" ).to.throw();
         });
     });
 });
