@@ -1,10 +1,16 @@
-// The gif
-export {Gif} from './Gif'
+export {Gif} from './Gif'; // (exported mostly for type checking)
+export {GifProvider} from './GifProvider';
+export {GifProviderBuilder} from './GifProviderBuilder';
 
-// The providers
-export {GifProvider} from './GifProvider'
-export {CompositeGifProvider, GiphyGifProvider, TenorGifProvider} from './providers';
-export {providersList} from './providers/providersList'
+// strategies
+export {
+    GifStrategy,
+    GiphyStrategy,
+    TenorStrategy
+} from './strategies';
 
-// The factory
-export {GifProviderFactory} from './GifProviderFactory'
+// clients
+export {
+    TenorClient,
+    GiphyClient
+} from './clients';
