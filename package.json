@@ -41,6 +41,7 @@
     "@types/lodash": "^4.14.144",
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.11.1",
+    "@types/ramda": "^0.27.29",
     "@types/request-promise": "^4.1.44",
     "@types/sinon": "^7.5.0",
     "@typescript-eslint/eslint-plugin": "^4.5.0",
@@ -62,6 +63,8 @@
     "bluebird": "^3.7.1",
     "giphy-api": "^2.0.1",
     "lodash": "^4.17.15",
+    "monet": "^0.9.1",
+    "ramda": "^0.27.1",
     "request": "^2.88.0",
     "request-promise": "^4.2.4"
   },
