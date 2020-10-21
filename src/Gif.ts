@@ -15,6 +15,6 @@ export class Gif {
  * Type Guard to determine if an object is a Gif
  * @param nilable can be an `any` or `nil` (`null|undefined`)
  */
-export const isGif = (nilable:any|null|undefined): nilable is Gif => {
+export const isGif = (nilable: unknown): nilable is Gif => {
     return (nilable instanceof Gif);
 }
