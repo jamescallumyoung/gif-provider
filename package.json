@@ -13,6 +13,7 @@
   ],
   "scripts": {
     "build": "tsc",
+    "build:js": "rollup -c",
     "test": "mocha",
     "test:ci": "mocha -R spec",
     "lint": "eslint ./src",
@@ -38,6 +39,7 @@
   },
   "homepage": "https://jych.gitlab.io/gif-provider/docs/",
   "devDependencies": {
+    "@rollup/plugin-typescript": "^6.0.0",
     "@types/bluebird": "^3.5.28",
     "@types/chai": "^4.2.3",
     "@types/lodash": "^4.14.144",
@@ -56,6 +58,8 @@
     "mocha": "^6.2.2",
     "nock": "^11.4.0",
     "prettier": "^2.1.2",
+    "rollup": "^2.7.2",
+    "rollup-plugin-terser": "^5.3.0",
     "sinon": "^7.5.0",
     "ts-node": "^8.4.1",
     "typedoc": "^0.15.0",
