@@ -2,7 +2,6 @@ import { TenorApiResponse } from "../../src/clients/tenor/tenor-api";
 
 import { expect } from "chai";
 import { GiphyClient, TenorClient } from "../../src";
-import { SearchClient, TrendingClient } from "../../src/clients";
 
 import nock = require("nock");
 
@@ -19,7 +18,7 @@ import giphySearchSuccessResponseFixture from "./fixtures/giphy-search-success-r
 // @ts-ignore
 import giphyBadAuthResponseFixture from "./fixtures/giphy-bad-auth-response.json";
 
-type ClientType = SearchClient & TrendingClient;
+type ClientType = GiphyClient | TenorClient;
 
 const clientConfigs = [
   {

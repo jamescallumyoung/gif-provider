@@ -1,7 +1,5 @@
 import { Maybe } from "monet";
 import { Gif } from "../../Gif";
-import { SearchClient } from "../SearchClient";
-import { TrendingClient } from "../TrendingClient";
 import { convertResponseToGifs } from "./utils";
 
 const giphyApi = require("giphy-api"); // eslint-disable-line @typescript-eslint/no-var-requires
@@ -10,7 +8,7 @@ const giphyApi = require("giphy-api"); // eslint-disable-line @typescript-eslint
  * The GiphyClient is a client for the Giphy Gif API, implementing the `Singleton` pattern,
  * and wrapping the internal `giphy-api` module.
  */
-export class GiphyClient implements SearchClient, TrendingClient {
+export class GiphyClient {
   private static instance: GiphyClient;
   private giphyApiInstance: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 
