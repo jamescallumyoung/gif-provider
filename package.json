@@ -15,7 +15,7 @@
     "build": "tsc",
     "test": "mocha",
     "lint": "eslint ./src --fix",
-    "pretty": "prettier ./src",
+    "pretty": "prettier ./src --write --loglevel warn",
     "format": "yarn run lint && yarn run pretty",
     "generate-docs": "typedoc --out docs --theme minimal --mode \"file\""
   },
