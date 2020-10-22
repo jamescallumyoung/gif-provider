@@ -1,1 +1,1 @@
-export { GiphyClient } from './GiphyClient';
+export { GiphyClient } from "./GiphyClient";
