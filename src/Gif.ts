@@ -5,10 +5,7 @@
  * @property thumbnailUrl - The URL of the thumbnail GIF
  */
 export class Gif {
-    constructor(
-        readonly originalUrl: string,
-        readonly thumbnailUrl: string
-    ) {}
+  constructor(readonly originalUrl: string, readonly thumbnailUrl: string) {}
 }
 
 /**
@@ -16,5 +13,5 @@ export class Gif {
  * @param nilable can be an `any` or `nil` (`null|undefined`)
  */
 export const isGif = (nilable: unknown): nilable is Gif => {
-    return (nilable instanceof Gif);
-}
+  return nilable instanceof Gif;
+};

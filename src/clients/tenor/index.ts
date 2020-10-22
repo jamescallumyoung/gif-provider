@@ -1,1 +1,1 @@
-export { TenorClient } from './TenorClient';
+export { TenorClient } from "./TenorClient";
