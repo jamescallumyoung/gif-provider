@@ -1,11 +1,9 @@
 import { Maybe } from "monet";
 import rp from "request-promise";
 import { Gif } from "../../Gif";
-import { SearchClient } from "../SearchClient";
-import { TrendingClient } from "../TrendingClient";
 import { convertResponseIntoGifs } from "./utils";
 
-export class TenorClient implements SearchClient, TrendingClient {
+export class TenorClient {
   private static instance: TenorClient;
   private readonly baseUri: string = "https://api.tenor.com/v1";
 
