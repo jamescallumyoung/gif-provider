@@ -1,7 +1,7 @@
 import { TenorApiResponse } from "../../src/clients/tenor/tenor-api";
 
 import { expect } from "chai";
-import { GiphyClient, TenorClient } from "../../src";
+import { GiphyClient, TenorClient, GfycatClient } from "../../src";
 
 import nock = require("nock");
 
@@ -17,8 +17,14 @@ import giphyTrendingSuccessResponseFixture from "./fixtures/giphy-trending-succe
 import giphySearchSuccessResponseFixture from "./fixtures/giphy-search-success-response.json";
 // @ts-ignore
 import giphyBadAuthResponseFixture from "./fixtures/giphy-bad-auth-response.json";
+// @ts-ignore
+import gfycatTrendingSuccessResponseFixture from "./fixtures/gfycat-trending-success-response.json";
+// @ts-ignore
+import gfycatSearchSuccessResponseFixture from "./fixtures/gfycat-search-success-response.json";
+// @ts-ignore
+import gfycatBadAuthResponseFixture from "./fixtures/gfycat-bad-auth-response.json";
 
-type ClientType = GiphyClient | TenorClient;
+type ClientType = GiphyClient | TenorClient | GfycatClient;
 
 const clientConfigs = [
   {
@@ -40,6 +46,16 @@ const clientConfigs = [
     trendingSuccessReponseFixture: giphyTrendingSuccessResponseFixture,
     badAuthReponseFixture: giphyBadAuthResponseFixture,
     client: GiphyClient,
+  },
+  {
+    name: "gfycat",
+    url: "https://api.gfycat.com/v1",
+    searchPath: "/gfycats/search",
+    trendingPath: "/reactions/populated",
+    searchSuccessReponseFixture: gfycatSearchSuccessResponseFixture,
+    trendingSuccessReponseFixture: gfycatTrendingSuccessResponseFixture,
+    badAuthReponseFixture: gfycatBadAuthResponseFixture,
+    client: GfycatClient,
   },
 ];
 
