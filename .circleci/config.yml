@@ -1,0 +1,52 @@
+version: 2.1
+orbs:
+  node: circleci/node@4.1.0
+  
+workflows:
+  ci:
+    jobs:
+      - format
+      - build
+      - node/test:
+          pkg-manager: yarn
+          matrix:
+            parameters:
+              version:
+                - 'lts'
+                - 'current'
+
+
+jobs:
+  format:
+    executor:
+      name: node/default
+      tag: 'lts'
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          name: Check Formatting
+          command: yarn run format:check
+  build:
+    executor:
+      name: node/default
+      tag: 'lts'
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          name: Build
+          command: yarn run build
+  test:
+    executor:
+      name: node/default
+      tag: 'lts'
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          name: Run Tests
+          command: yarn run format:check
