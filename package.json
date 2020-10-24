@@ -14,9 +14,11 @@
   "scripts": {
     "build": "tsc",
     "test": "mocha",
-    "lint": "eslint ./src --fix",
-    "pretty": "prettier ./src --write --loglevel warn",
-    "format": "yarn run lint && yarn run pretty",
+    "test:ci": "mocha -R spec",
+    "lint": "eslint ./src",
+    "pretty": "prettier ./src --loglevel warn",
+    "format:check": "yarn lint && yarn pretty",
+    "format:fix": "yarn lint --fix && yarn pretty --write",
     "generate-docs": "typedoc --out docs --theme minimal --mode \"file\""
   },
   "keywords": [
@@ -77,7 +79,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "yarn format"
+      "yarn format:fix"
     ]
   },
   "husky": {
