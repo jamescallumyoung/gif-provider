@@ -196,7 +196,23 @@ describe("[clients]", () => {
             // expect(r).to.have.lengthOf(endpoint.successFixture.results.length);
 
             expect(r[0]).to.have.property("originalUrl");
+            expect(r[0].originalUrl).to.not.equal(
+              undefined,
+              "Gif.originalUrl is undefined"
+            );
+            expect(r[0].originalUrl).to.not.equal(
+              "",
+              "Gif.originalUrl is an empty string"
+            );
             expect(r[0]).to.have.property("thumbnailUrl");
+            expect(r[0].thumbnailUrl).to.not.equal(
+              undefined,
+              "Gif.thumbnailUrl is undefined"
+            );
+            expect(r[0].thumbnailUrl).to.not.equal(
+              "",
+              "Gif.thumbnailUrl is an empty string"
+            );
           });
         });
       }
