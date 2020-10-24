@@ -37,6 +37,7 @@ jobs:
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
+          scope: '@jych'
       - run: yarn version --no-git-tag-version --new-version ${{ github.event.release.tag_name }}
       - run: npm publish
         env:
