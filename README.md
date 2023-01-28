@@ -1,3 +1,5 @@
+> ⚠️ This package is no longer maintained.
+
 <div align="center">
   <h1><code>gif-provider</code></h1>
 
@@ -79,7 +81,7 @@ const gifs = await gifProvider.search("rat mouse"); // gifs is a flat array of r
 
 ## Docs
 
-See the [online docs](https://jych.gitlab.io/gif-provider/docs/) or generate a local copy for offline use:
+Generate a local copy of the docs for offline use:
 
 ```bash
 yarn install
@@ -89,10 +91,12 @@ open docs/index.html
 
 # Contributing
 
-Contributions, issues and feature requests are welcome! Feel free to check the
-[issues page](https://github.com/jamescallumyoung/gif-provider/issues) for an idea of where to get
-started. Contributors must follow the [contributing guide](./CONTRIBUTING.md) and
-[code of conduct](./CODE_OF_CONDUCT.md).
+**This package is no longer being maintained.**
+
+~Contributions, issues and feature requests are no longer welcome! Feel free to check the~
+~[issues page](https://github.com/jamescallumyoung/gif-provider/issues) for an idea of where to get~
+~started. Contributors must follow the [contributing guide](./CONTRIBUTING.md) and~
+~[code of conduct](./CODE_OF_CONDUCT.md).~
 
 # License
 
